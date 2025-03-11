@@ -5,8 +5,28 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Jupyter Interactive",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--NotebookApp.allow_origin='*'",
+                "--NotebookApp.token=''",
+                "--NotebookApp.password=''",
+                "--NotebookApp.disable_check_xsrf=True"
+            ]
+        },
+        {
             "name": "Python plot.py (Integrated Terminal)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/test-project/plot.py",
             "cwd":"${workspaceFolder}/test-project",
@@ -14,7 +34,7 @@
         },
         {
             "name": "Python database.py (Integrated Terminal)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/test-project/database.py",
             "cwd":"${workspaceFolder}/test-project",

@@ -1,4 +1,3 @@
-version: '3.8'
 
 services:
   anaconda:
@@ -34,7 +33,7 @@ services:
     ports:
       - 11434:11434
     volumes:
-      - ../ollama_path:/root/.ollama
+      - ~/.ollama:/root/.ollama
     pull_policy: always
     tty: true
     restart: always
