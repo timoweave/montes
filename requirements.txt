@@ -115,7 +115,7 @@ pyyaml==6.0.2
     # via
     #   pre-commit
     #   uvicorn
-requests==2.32.3
+requests==2.31.0
     # via workspace (pyproject.toml)
 rich==13.9.4
     # via

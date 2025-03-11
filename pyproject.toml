@@ -7,7 +7,7 @@ requires-python = ">=3.11"
 dependencies = [
     "fastapi[standard]>=0.115.11",
     "fastapi-cli>=0.0.7",
-    "requests>=2.32.3",
+    "requests>=2.31.0",
     "ruff>=0.9.10",
     "httpx>=0.28.1",
     "pytest>=8.3.5",
@@ -16,4 +16,5 @@ dependencies = [
     "pytest-mock>=3.14.0",
     "pre-commit>=4.1.0",
     "invoke>=2.2.0",
+    "requests-mock>=1.12.1",
 ]
