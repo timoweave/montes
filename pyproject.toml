@@ -17,4 +17,5 @@ dependencies = [
     "pre-commit>=4.1.0",
     "invoke>=2.2.0",
     "requests-mock>=1.12.1",
+    "clyent==1.2.1",
 ]

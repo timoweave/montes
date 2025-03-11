@@ -118,6 +118,12 @@ wheels = [
 ]
 
 [[package]]
+name = "clyent"
+version = "1.2.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/e9/1b/f73dd0efcacfcadb4beaa075d1f2cfe675fd8baf7658f21a3a7fd5c84aae/clyent-1.2.1.tar.gz", hash = "sha256:72b977e7c115224f474f9c70c549c0977b8daf5ac00452301cff065ff14129e5", size = 20935 }
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 source = { registry = "https://pypi.org/simple" }
@@ -967,6 +973,7 @@ name = "workspace"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "clyent" },
     { name = "fastapi", extra = ["standard"] },
     { name = "fastapi-cli" },
     { name = "httpx" },
@@ -983,6 +990,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "clyent", specifier = "==1.2.1" },
     { name = "fastapi", extras = ["standard"], specifier = ">=0.115.11" },
     { name = "fastapi-cli", specifier = ">=0.0.7" },
     { name = "httpx", specifier = ">=0.28.1" },
