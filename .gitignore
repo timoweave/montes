@@ -4,3 +4,4 @@ postgres_path
 .pytest_cache
 .pyc
 workspace.egg-info
+*_volume

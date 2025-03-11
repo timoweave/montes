@@ -1,6 +1,7 @@
 
 services:
   anaconda:
+    container_name: anaconda
     image: mcr.microsoft.com/vscode/devcontainers/anaconda:0-3
     volumes:
       - ..:/workspace:cached
@@ -9,26 +10,42 @@ services:
       - montes_network
 
   jupyter:
-    image: jupyter/scipy-notebook
     container_name: jupyter
+    image: jupyter/scipy-notebook
     ports:
       - "8888:8888"
     volumes:
-      - ../jupyter_path:/home/jovyan
+      - ../jupyter_volume:/home/jovyan
     networks:
       - montes_network
 
   postgres:
+    container_name: postgres
     image: postgres:latest
     restart: unless-stopped
     volumes:
-      - ../postgres_path:/var/lib/postgresql/data
+      - ../postgres_volume:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
     env_file:
       - .env
     networks:
       - montes_network
 
+  pgadmin4:
+    container_name: pgadmin4
+    image: dpage/pgadmin4:latest
+    ports:
+      - "8090:80"
+    env_file:
+      - .env
+    volumes:
+      - ../pgadmin4_volume:/var/lib/pgadmin
+    networks:
+      - montes_network
+
   ollama:
+    container_name: ollama
     image: ollama/ollama:latest
     ports:
       - 11434:11434
@@ -40,6 +57,18 @@ services:
     environment:
       - OLLAMA_KEEP_ALIVE=24h
       - OLLAMA_HOST=0.0.0.0
+    networks:
+      - montes_network
+
+  openwebui:
+    container_name: openwebui
+    image: ghcr.io/open-webui/open-webui:main
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
+    volumes:
+      - ../openwebui_volume:/app/backend/data
     networks:
       - montes_network
 
