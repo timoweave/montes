@@ -1,6 +1,4 @@
 __pycache__
-jupyter_path
-postgres_path
 .pytest_cache
 .pyc
 workspace.egg-info
